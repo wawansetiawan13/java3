@@ -1,8 +1,4 @@
-# pertemuan1D
-
-#tugas ke 3 java 2
-
-Javadesktop
-- nama Arif kurniawan
-- 2017804288
-- SI6D
+# wawan setiawan
+# 2017 804 143
+===========================>>>>
+ini adalah tugas ke 3 dari matakuliah java2
