@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b9751f34-4be3-4709-aa41-739bd41bf4dc">
+	<property name="ireport.zoom" value="1.2100000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * from barang]]>
+	</queryString>
+	<field name="kodebarang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="namabarang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kategori" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="satuan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="subtotal" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{harga} * $F{jumlah}]]></variableExpression>
+	</variable>
+	<variable name="total" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$V{subtotal}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="191" y="15" width="188" height="49" uuid="a89fe63b-8350-4234-b87c-d99c5cea6c08"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="24"/>
+				</textElement>
+				<text><![CDATA[LAPORAN BARANG]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="443" y="15" width="100" height="20" uuid="f2b0cafa-4b88-4793-b443-3f30ba5716f0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="443" y="44" width="100" height="20" uuid="11edc862-f0da-4771-b681-e2530a079650"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="2" width="83" height="20" uuid="42e94fdf-f012-4432-a19f-ec92c2ed5ac0"/>
+				<text><![CDATA[namabarang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="2" width="82" height="20" uuid="c6240bd6-4b33-4138-9b47-c3fef0d28167"/>
+				<text><![CDATA[kodebarang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="2" width="51" height="20" uuid="139d3f9d-2024-40f1-be6a-cbbebe01a043"/>
+				<text><![CDATA[jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="2" width="67" height="20" uuid="a8df5725-2af4-47c5-8b92-7a0f0af61a17"/>
+				<text><![CDATA[total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="2" width="87" height="20" uuid="417143e8-b83e-4a4e-abe3-08178dc9e192"/>
+				<text><![CDATA[harga]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="2" width="526" height="20" uuid="ec6db137-91dc-410f-96c3-b893d588c252"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="120" y="0" width="83" height="20" uuid="b14e3ad1-6963-41e5-80a5-1635bada0b63"/>
+				<textFieldExpression><![CDATA[$F{namabarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="0" width="82" height="20" uuid="62ba8b2b-5c8d-46bd-bd5e-7fbac5818a30"/>
+				<textFieldExpression><![CDATA[$F{kodebarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="0" width="67" height="20" uuid="593d5b17-f094-49c1-bc96-7bb24bb5c195"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="0" width="67" height="20" uuid="746df8bc-3069-40b8-87e8-b2bf0d20ab62"/>
+				<textFieldExpression><![CDATA[$V{subtotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="0" width="87" height="20" uuid="6734a606-ad99-4f33-ad5e-33a37809d4cf"/>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="526" height="20" uuid="0dc15fbd-1fa0-4273-b18d-3928f28dc054"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="34" width="78" height="20" uuid="d12ac437-1302-4f76-b540-faf420f039e3"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["halaman "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="80" y="34" width="40" height="20" uuid="10d6a568-bb9f-4d44-86ef-8762725c0f7c"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="443" y="22" width="55" height="20" uuid="ecfa6bee-106b-4773-b4f3-ec5eca367b88"/>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="379" y="22" width="100" height="20" uuid="6054145d-d92b-4527-b122-dffdff4df5f5"/>
+				<text><![CDATA[Grand total :]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
